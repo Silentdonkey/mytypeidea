@@ -24,11 +24,12 @@ SECRET_KEY = 'idepdui1-m_(@lau&4#dzq(@zd91djsda20z4_qrxih%*m#a78'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '192.168.152.129', ]
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'typeidea', # 通过增加这个APP来查找templates目录
     'comment',
     'config',
     'blog',
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'typeidea.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
